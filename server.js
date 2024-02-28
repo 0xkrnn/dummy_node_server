@@ -18,21 +18,21 @@ app.use(session({
     secret: "secretKey",
     resave: false,
     saveUninitialized: true,
-    store: new MongoStore({
-        mongoUrl: "mongodb://localhost:27017/auth",
-        collectionName: "sessions"
-    }),
+    // store: new MongoStore({
+    //     mongoUrl: "mongodb://localhost:27017/auth",
+    //     collectionName: "sessions"
+    // }),
     cookie: {
 
     }
 }))
 
-mongoose.connect("mongodb://localhost:27017/auth")
+// mongoose.connect("mongodb://localhost:27017/auth")
 
 // app.use(passport.initialize());
 // app.use(passport.session());
 
-app.use("/auth", require("./routes/athRoute"))
+// app.use("/auth", require("./routes/athRoute"))
 
 
 app.get("/", (req, res) => {
